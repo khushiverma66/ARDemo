@@ -21,5 +21,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key></key>
+	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>ARkit usage</string>
 </dict>
 </plist>
