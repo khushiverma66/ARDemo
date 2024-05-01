@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		265186652BE2034400CA9B0C /* RealityKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265186642BE2034400CA9B0C /* RealityKitViewController.swift */; };
 		266714DD2BE0F1F600E8D715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266714DC2BE0F1F600E8D715 /* AppDelegate.swift */; };
 		266714DF2BE0F1F600E8D715 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266714DE2BE0F1F600E8D715 /* SceneDelegate.swift */; };
 		266714E12BE0F1F600E8D715 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266714E02BE0F1F600E8D715 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		265186642BE2034400CA9B0C /* RealityKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityKitViewController.swift; sourceTree = "<group>"; };
 		266714D92BE0F1F600E8D715 /* ARDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		266714DC2BE0F1F600E8D715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		266714DE2BE0F1F600E8D715 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				266714E52BE0F1F700E8D715 /* Assets.xcassets */,
 				266714E72BE0F1F700E8D715 /* LaunchScreen.storyboard */,
 				266714EA2BE0F1F700E8D715 /* Info.plist */,
+				265186642BE2034400CA9B0C /* RealityKitViewController.swift */,
 			);
 			path = ARDemo;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				266714E12BE0F1F600E8D715 /* ViewController.swift in Sources */,
 				266714DD2BE0F1F600E8D715 /* AppDelegate.swift in Sources */,
+				265186652BE2034400CA9B0C /* RealityKitViewController.swift in Sources */,
 				266714DF2BE0F1F600E8D715 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

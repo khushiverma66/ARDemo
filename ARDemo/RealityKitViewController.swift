@@ -1,43 +1,44 @@
+//
+//  RealityKitViewController.swift
+//  ARDemo
+//
+//  Created by Khushi Verma on 01/05/24.
+//
+
 import UIKit
 import ARKit
+import RealityKit
 
-class ARViewController: UIViewController, ARSCNViewDelegate {
-    
+class RealityKitViewController: UIViewController , ARSCNViewDelegate {
     var sceneView: ARSCNView!
-    
-    @IBOutlet weak var distanceLabel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Set up the ARSCNView
         sceneView = ARSCNView(frame: view.frame)
-        sceneView.debugOptions = .showWireframe
-        view.addSubview(sceneView)
         sceneView.delegate = self
-        
-        // Create a new scene
-        let scene = SCNScene()
-        sceneView.scene = scene
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = .vertical
-        configuration.sceneReconstruction = .meshWithClassification
+//        let configuration = ARWorldTrackingConfiguration()
+//        configuration.planeDetection = .vertical
+//        configuration.sceneReconstruction = .meshWithClassification
         
         // Run the view's session
-        sceneView.session.run(configuration)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+      
+
+        let arView = ARView(frame: view.frame,
+                                    cameraMode: .ar,
+                                            automaticallyConfigureSession: false)
+
+                arView.automaticallyConfigureSession = false
+                let configuration = ARWorldTrackingConfiguration()
+                configuration.sceneReconstruction = .meshWithClassification
+                configuration.planeDetection = [.vertical]
+                arView.debugOptions.insert(.showSceneUnderstanding)
+                view.addSubview(arView)
+
+                arView.debugOptions = [.showWorldOrigin, .showSceneUnderstanding]
         
-        // Pause the view's session
-        sceneView.session.pause()
+           //     arView.session.run(configuration)
+        sceneView.session.run(configuration)
+
+        // Do any additional setup after loading the view.
     }
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
@@ -70,7 +71,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             
             // Now you have the distance, you can use it as needed
             print("Distance between camera and hit point: \(distance)")
-            self.distanceLabel.text = String(format: "Distance: %.2f meters", distance)
+         //   self.distanceLabel.text = String(format: "Distance: %.2f meters", distance)
         }
     }
 
@@ -81,4 +82,3 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         return sqrt(dx*dx + dy*dy + dz*dz)
     }
 }
-
